@@ -24,8 +24,8 @@ export async function createServer(
 	const app = express()
 
 	/**
-   * @type {import('vite').ViteDevServer}
-   */
+	* @type {import('vite').ViteDevServer}
+	*/
 	let vite
 	if (!isProd) {
 		vite = await (await import('vite')).createServer({
@@ -87,8 +87,9 @@ export async function createServer(
 	return { app, vite }
 }
 
+const port = PORT ?? 5173
 createServer().then(({ app }) =>
-	app.listen(PORT, () => {
-		console.log(`http://localhost:${PORT}`)
+	app.listen(port, () => {
+		console.log(`http://localhost:${port}`)
 	}),
 )
