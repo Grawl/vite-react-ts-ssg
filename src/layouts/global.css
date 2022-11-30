@@ -1,0 +1,7 @@
+@import 'sanitize.css';
+html {
+	font-family: sans-serif;
+}
+.page {
+	padding: 1em;
+}

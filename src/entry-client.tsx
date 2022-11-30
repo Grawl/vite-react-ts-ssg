@@ -4,14 +4,14 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { App } from './app'
 
-const app = document.getElementById('app')
+const root = document.getElementById('root')
 
-if (!app) {
-	throw Error('#app not found')
+if (!root) {
+	throw Error('root element not found')
 }
 
 hydrateRoot(
-	app,
+	root,
 	<BrowserRouter>
 		<App />
 	</BrowserRouter>,

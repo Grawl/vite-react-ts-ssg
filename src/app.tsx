@@ -1,22 +1,15 @@
 import React, { Fragment } from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 
+import { GlobalNav } from './layouts/components/nav'
 import { routes } from './routes'
+
+import './layouts/global.css'
 
 export const App = () => {
 	return (
 		<>
-			<nav>
-				<ul>
-					{routes.map(({ name, path }) => {
-						return (
-							<li key={path}>
-								<Link to={path}>{name}</Link>
-							</li>
-						)
-					})}
-				</ul>
-			</nav>
+			<GlobalNav />
 			<Routes>
 				{routes.map(({ path, Component }) => (
 					<Fragment key={path}>

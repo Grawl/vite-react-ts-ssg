@@ -1,8 +1,11 @@
+
 import dotenv from 'dotenv'
 import express from 'express'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+
+import { appTemplate } from './template.js'
 
 dotenv.config()
 
@@ -54,17 +57,18 @@ export async function createServer(
 		try {
 			const url = req.originalUrl
 
-			let template, render, viteHTML
+			let template, render
 
 			if (isProd) {
 				template = indexProd
-				// @ts-ignore
-				render = (await import('./dist/server/entry-server.js')).render
+				const entry = await import('./dist/server/entry-server.js')
+				render = entry.render
 			} else {
 				// always read fresh template in dev
-				template = '<!--app-html-->'
-				viteHTML = await vite.transformIndexHtml(url, '')
-				render = (await vite.ssrLoadModule('/src/entry-server.tsx')).render
+				template = fs.readFileSync(resolve('index.html'), 'utf-8')
+				template = await vite.transformIndexHtml(url, template)
+				const entry = await vite.ssrLoadModule('/src/entry-server.tsx')
+				render = entry.render
 			}
 
 			const context = {}
@@ -75,9 +79,7 @@ export async function createServer(
 				return res.redirect(301, context.url)
 			}
 
-			const html = template
-				.replace(`<!--app-html-->`, appHtml)
-				.replace('<!--vite-html-->', viteHTML)
+			const html = appTemplate(template, appHtml)
 
 			res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
 		} catch (e) {

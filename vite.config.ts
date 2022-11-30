@@ -9,7 +9,6 @@ export default defineConfig({
 		react(),
 	],
 	build: {
-		minify: false,
 		assetsInlineLimit: 0,
 	},
 	base: process.env.PUBLIC_BASE_URL,

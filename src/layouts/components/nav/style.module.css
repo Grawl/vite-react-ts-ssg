@@ -1,0 +1,8 @@
+.root {
+	padding: 1em;
+}
+.nav {
+	display: flex;
+	gap: 1em;
+	margin: unset;
+}
