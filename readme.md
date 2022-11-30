@@ -3,7 +3,8 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/Grawl/vite-react-ts-ssg/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Grawl/vite-react-ts-ssg?targetFile=package.json)
 [![Maintainability](https://api.codeclimate.com/v1/badges/c875bc2c3f824135f2c9/maintainability)](https://codeclimate.com/github/Grawl/vite-react-ts-ssg/maintainability)
 [![Build](https://github.com/Grawl/vite-react-ts-ssg/actions/workflows/build.yml/badge.svg)](https://github.com/Grawl/vite-react-ts-ssg/actions/workflows/build.yml)
-[![Node.js >= 16](https://img.shields.io/badge/Node.js-16-brightgreen.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+[![Node.js ^18.12.1](https://img.shields.io/badge/Node.js-^18.12.1-brightgreen.svg)](https://nodejs.org)
+[![Yarn ^1.22.19](https://img.shields.io/badge/Yarn-^1.22.19-brightgreen.svg)](https://classic.yarnpkg.com)
 
 Nothing useless, built from scratch
 

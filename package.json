@@ -2,6 +2,10 @@
 	"name": "vite-react-ts-ssg",
 	"version": "0.0.1",
 	"type": "module",
+	"engines": {
+		"yarn": "^1.22.19",
+		"node": "^18.12.1"
+	},
 	"scripts": {
 		"dev": "node server",
 		"build": "vite build --outDir dist/static && npm run build:ssr",
