@@ -1,0 +1,12 @@
+<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+	#fill { fill: #070707; }
+	@media (prefers-color-scheme: dark) {
+		#fill { fill: white; }
+	}
+</style>
+<path
+	id="fill"
+	d="m16 3 2.919 8.983h9.445l-7.642 5.551 2.92 8.983L16 20.966l-7.641 5.551 2.918-8.983-7.64-5.551h9.444L16 3Z"
+/>
+</svg>

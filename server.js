@@ -27,7 +27,14 @@ export async function createServer(
 	* @type {import('vite').ViteDevServer}
 	*/
 	let vite
-	if (!isProd) {
+	if (isProd) {
+		app.use((await import('compression')).default())
+		app.use(
+			(await import('serve-static')).default(resolve('dist/client'), {
+				index: false,
+			}),
+		)
+	} else {
 		vite = await (await import('vite')).createServer({
 			root,
 			logLevel: 'info',
@@ -41,29 +48,23 @@ export async function createServer(
 		})
 		// use vite's connect instance as middleware
 		app.use(vite.middlewares)
-	} else {
-		app.use((await import('compression')).default())
-		app.use(
-			(await import('serve-static')).default(resolve('dist/client'), {
-				index: false,
-			}),
-		)
 	}
 
 	app.use('*', async (req, res) => {
 		try {
 			const url = req.originalUrl
 
-			let template, render
-			if (!isProd) {
-				// always read fresh template in dev
-				template = fs.readFileSync(resolve('index.html'), 'utf-8')
-				template = await vite.transformIndexHtml(url, template)
-				render = (await vite.ssrLoadModule('/src/entry-server.tsx')).render
-			} else {
+			let template, render, viteHTML
+
+			if (isProd) {
 				template = indexProd
 				// @ts-ignore
 				render = (await import('./dist/server/entry-server.js')).render
+			} else {
+				// always read fresh template in dev
+				template = '<!--app-html-->'
+				viteHTML = await vite.transformIndexHtml(url, '')
+				render = (await vite.ssrLoadModule('/src/entry-server.tsx')).render
 			}
 
 			const context = {}
@@ -74,11 +75,13 @@ export async function createServer(
 				return res.redirect(301, context.url)
 			}
 
-			const html = template.replace(`<!--app-html-->`, appHtml)
+			const html = template
+				.replace(`<!--app-html-->`, appHtml)
+				.replace('<!--vite-html-->', viteHTML)
 
 			res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
 		} catch (e) {
-			!isProd && vite.ssrFixStacktrace(e)
+			if(!isProd) vite.ssrFixStacktrace(e)
 			console.log(e.stack)
 			res.status(500).end(e.stack)
 		}
