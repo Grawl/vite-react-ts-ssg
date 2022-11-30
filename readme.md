@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/c875bc2c3f824135f2c9/maintainability)](https://codeclimate.com/github/Grawl/vite-react-ts-ssg/maintainability)
 [![Build](https://github.com/Grawl/vite-react-ts-ssg/actions/workflows/build.yml/badge.svg)](https://github.com/Grawl/vite-react-ts-ssg/actions/workflows/build.yml)
 [![Node.js ^18.12.1](https://img.shields.io/badge/Node.js-^18.12.1-brightgreen.svg)](https://nodejs.org)
-[![Yarn ^1.22.19](https://img.shields.io/badge/Yarn-^1.22.19-brightgreen.svg)](https://classic.yarnpkg.com)
+[![NPM ^8.19.2](https://img.shields.io/badge/NPM-^8.19.2-brightgreen.svg)](https://npmjs.com)
 
 Nothing useless, built from scratch
 
@@ -18,11 +18,11 @@ npx degit Grawl/vite-react-ts-ssg
 
 You can add desirable folder name in the end of that command to copy template into it
 
-# `yarn dev` to start developing
+# `npm run dev` to start developing
 
 You can copy `.env.example` as `.env` and change development server port
 
-# `yarn build` to get static files
+# `npm run build` to get static files
 
 You will get `dist/static/` folder with all static assets you can deploy anywhere
 

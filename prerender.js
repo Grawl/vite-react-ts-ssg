@@ -1,5 +1,5 @@
 // Pre-render the app into static HTML.
-// run `yarn build` and then `dist/static` can be served as a static site.
+// run `npm run build` and then `dist/static` can be served as a static site.
 
 import fs from 'node:fs'
 import path from 'node:path'
