@@ -44,3 +44,7 @@ Removed:
 
 - **Tests** because who wants to test static sites
 - **SSR mode** because we want SSG here
+
+# TODO
+
+- [ ] Use `ts-node` to run all scripts and rewrite all JS to TS

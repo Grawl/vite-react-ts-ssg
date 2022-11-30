@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-import { PageHead } from '../../layouts/components/head'
+import { PageHead } from '@/layouts/components/head'
+
 import styles from './style.module.css'
 
 export const Home = () => {

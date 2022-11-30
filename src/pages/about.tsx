@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { PageHead } from '../layouts/components/head'
+import { PageHead } from '@/layouts/components/head'
 
 export const About = () => {
 	return (

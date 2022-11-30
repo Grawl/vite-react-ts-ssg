@@ -42,10 +42,8 @@ module.exports = defineConfig({
 				['^react'],
 				// node_modules
 				['^@?\\w'],
-				// Root
-				['^src'],
-				// Aliases
-				['^pages\\/?'],
+				// Root alias
+				['^\@'],
 				// Anything not matched in another group
 				['^'],
 				// Side effects like `import 'foo'`

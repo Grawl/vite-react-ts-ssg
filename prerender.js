@@ -14,6 +14,7 @@ const template = fs.readFileSync(toAbsolute('dist/static/index.html'), 'utf-8')
 
 const { render } = await import('./dist/server/entry-server.js')
 
+// TODO use `routes` from `./src/routes.ts`
 // determine routes to pre-render from src/pages
 const routesToPrerender = fs
 	.readdirSync(toAbsolute('src/pages'))
