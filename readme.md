@@ -22,6 +22,8 @@ Added:
 - [ESLint](http://eslint.org) support with minimal config for code style, plus:
   - [simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort) to sort imports during ESLint `--fix`
   - [unsed-imports](https://github.com/sweepline/eslint-plugin-unused-imports) to remove unused imports during ESLint `--fix`
+- [React Helmet](https://github.com/nfl/react-helmet) to rule document `<head>`
+- Styling examples using CSS Modules and global CSS
 
 Removed:
 
