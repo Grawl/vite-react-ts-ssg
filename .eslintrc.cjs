@@ -33,6 +33,7 @@ module.exports = defineConfig({
 			allowTemplateLiterals: true,
 		}],
 		'quote-props': ['error', 'consistent'],
+		'object-curly-spacing': ['warn', 'always'],
 		//
 		'unused-imports/no-unused-imports': ['warn'],
 		'simple-import-sort/imports': ['warn', {
