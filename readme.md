@@ -11,7 +11,9 @@ Nothing useless, built from scratch
 
 # Create a project using this template
 
-> npx degit Grawl/vite-react-ts-ssg
+```
+npx degit Grawl/vite-react-ts-ssg
+```
 
 You can add desirable folder name in the end of that command to copy template into it
 
