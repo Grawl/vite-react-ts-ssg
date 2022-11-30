@@ -26,7 +26,10 @@ export const PageHead = (props: Props) => {
 
 	const titleTemplate = props.titleTemplate ?? `%s | ${meta.name}`
 
-	return <Helmet titleTemplate={titleTemplate}>
+	return <Helmet
+		titleTemplate={titleTemplate}
+		defaultTitle={meta.name}
+	>
 		<html lang={meta.lang} />
 		<meta
 			name='viewport'

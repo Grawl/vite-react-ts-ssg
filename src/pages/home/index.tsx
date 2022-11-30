@@ -7,7 +7,7 @@ export const Home = () => {
 	const [count, setCount] = useState(0)
 	return (
 		<div className='page'>
-			<PageHead title='Home' titleTemplate='%s' />
+			<PageHead titleTemplate='%s' />
 			<h1>Home</h1>
 			<p>Home page text</p>
 			<p>You clicked {count} times</p>
